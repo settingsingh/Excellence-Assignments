@@ -20,5 +20,25 @@ Write a function in python, which will return maximum i.e function should return
   “3” : 70
 }
 '''
+# function to find out the maximum
+
+
+def findMax(students):
+    maxMarks = -1
+    objKey = -1
+    for key, value in students.items():
+        if value > maxMarks:
+            maxMarks = value
+            objKey = key
+    return {objKey: students[objKey]}
+
 
 # Main program
+numOfElements = int(input("Enter the number of elements: "))
+students = {}
+for i in range(numOfElements):
+    k = input("Enter key: ")
+    v = int(input("ENter the marks: "))
+    students.update({k: v})
+
+print(findMax(students))
